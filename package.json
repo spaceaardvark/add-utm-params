@@ -8,7 +8,8 @@
     "watch": "rollup -c -w",
     "serve": "http-server dist",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
-    "test-watch": "node --experimental-vm-modules node_modules/.bin/jest --coverage --watch"
+    "test-watch": "node --experimental-vm-modules node_modules/.bin/jest --coverage --watch",
+    "publish": "cd dist && surge && cd .."
   },
   "repository": {
     "type": "git",
