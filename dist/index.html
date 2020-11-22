@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add UTM Parameters to a URL</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css">
+  <script src="https://kit.fontawesome.com/b152b85371.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="terminal">
+
+  <div class="container">
+
+    <!-- Header -->
+    <header id="top">
+      <h1>Add UTM Parameters to a URL</h1>
+      <p>A simple tool to help you track URL clicks in Google Analytics and other
+        tools. Do you need a UTM parameter refresher?
+        See <a href="#how">the primer</a> below.</p>
+    </header>
+
+    <!-- Application -->
+    <div id="app"></div>
+    <script src="main.min.js"></script>
+
+    <!-- Everything else -->
+    <footer>
+      <h2 id="how">How do UTM parameters work?</h2>
+
+      <p>Consider this scenario: myproduct.com (the <em>client</em>) buys an ad
+        package from citynews.com (the <em>publisher</em>). A link to myproduct.com
+        will appear on the citynews.com website and in the citynews.com email
+        newsletter.</p>
+
+      <p>The next day, a reader on the citynews.com website clicks on the ad and goes
+        to myproduct.com. Later that day, another reader opens the citynews.com email
+        newsletter and clicks on the email ad and goes to myproduct.com.</p>
+
+      <p>When the client goes into Google Analytics (or any other analytics tool),
+        they will see that two people clicked on myproduct.com. But that's not very
+        helpful! The client would like to know a lot more about where those ad clicks
+        came from, so they can adjust their ad order with citynews.com next month. </p>
+
+      <p>This is the problem that UTM parameters help solve. The client, perhaps with
+        help from the publisher, adds additonal information to their URL in the form of
+        UTM parameters.</p>
+
+      <p>For ads that appear on the citynews.com website, the client uses the URL</p>
+
+      <p class="indented">https://myproduct.com/?<span class="source">utm_source=citynews</span>&<span
+          class="medium">utm_medium=website</span></p>
+
+      <p>For ads that appear in the citynews.com email newsletter, the client uses
+        the URL</p>
+
+      <p class="indented">https://myproduct.com/?<span class="source">utm_source=citynews</span>&<span
+          class="medium">utm_medium=email</span></p>
+
+      <p>Now when the client goes into Google Analytics, they will be able to see the
+        <span class="source">source</span> of the clicks and the <span
+        class="medium">marketing medium</span> used to deliver the clicks. So much
+        more helpful!</p>
+
+      <p>But wait, there's more. The <code>utm_campaign</code> parameter may be used to
+        indicate the marketing campaign or ad buy associated with the link, and the
+        <code>utm_content</code> parameter may be used to indicate the link's location 
+        on the webpage or email. The form above makes it easy to add all of these
+        parameters.</p>
+
+      <h2>Why are UTM parameters so... difficult?</h2>
+
+      <p>Although there are some reliable guidelines for how to use UTM parameters,
+        there are no "right" answers or hard-and-fast rules. Why? Because the "right"
+        answers are determined by <strong>what the client wants or expects to see in
+          Google Analytics</strong>. For example, should <code>utm_source</code> be set
+        to</p>
+
+      <ul>
+        <li>citynews</li>
+        <li>citynews.com</li>
+        <li>City News</li>
+        <li>...?</li>
+      </ul>
+
+      <p>These questions need to be 1) answered by the client or 2) answered by the
+        publisher and communicated to the client.</p>
+
+      <p><a href="#">Back to top</a></p>
+
+      <p>This is an open-source web application. See the 
+        <a href="https://github.com/spaceaardvark/add-utm-params">code</a>.</p>
+
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
